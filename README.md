@@ -433,6 +433,7 @@ CoSys-Org includes an implementation of **S-Grams (2nd Power N-Grams)**, a mathe
 For detailed information, see:
 - [S-Grams Documentation](docs/SGRAMS_README.md)
 - [Complete S-Grams Tables](docs/SGRAMS_TABLES.md)
+- [Mathematical Extensions & N-Gram Orders](docs/SGRAMS_MATHEMATICAL_EXTENSIONS.md)
 - [Implementation](src/sgrams/)
 
 Quick example:

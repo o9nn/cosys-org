@@ -4,6 +4,8 @@
 
 This document describes the S-Grams (2nd Power N-Grams) implementation for the CoSys-Org framework. S-Grams represent a mathematical pattern system for modeling state transformations using "Resolving" and "Informing" patterns.
 
+**Note**: For mathematical context on N-Gram orders (1st, 2nd, 3rd power) and dimensional Catalan extensions (1D→2D→3D), see [Mathematical Extensions](SGRAMS_MATHEMATICAL_EXTENSIONS.md).
+
 ## What are S-Grams?
 
 S-Grams are mathematical structures defined by:
@@ -21,6 +23,10 @@ For each S-Gram at index `n`:
 - Formula: `1 + (1 + n)² = 1 + (1+n) + 1 + (1+n) + (1+n)²`
 - This expands to: `(n+2) + (n+1)²`
 - Example for n=3: `1 + (1+3)² = 1+4+1+4+16 = 5+16 = 26`
+
+The **square term** `(1+n)²` creates quadratic growth in state space and maps to **1D Catalan numbers** (OEIS A000108), representing the "surface" of a 1-dimensional interval where **order matters**.
+
+**Catalan Numbers** (OEIS A000108): 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, ...
 
 ## State Transformations
 

@@ -169,7 +169,21 @@ patterns = multi.get_pattern_for_state(6)
 - `src/sgrams/` - Implementation source
 - `docs/SGRAMS_README.md` - Complete documentation
 - `docs/SGRAMS_TABLES.md` - Full reference tables
+- `docs/SGRAMS_MATHEMATICAL_EXTENSIONS.md` - Mathematical foundations, N-Gram orders, dimensional extensions
 - `src/sgrams/examples.py` - Usage examples
+
+## Mathematical Context
+
+Current S-Grams implement **2nd Power N-Grams** mapping to **1D Catalan numbers** (OEIS A000108).
+
+Future extensions could include:
+- **1st Power N-Grams**: Linear patterns for simple workflows
+- **3rd Power N-Grams**: Cubic patterns for hierarchical structures  
+- **2D Catalan (OEIS A000081)**: Rooted trees for organizational hierarchies
+- **3D Catalan (OEIS A000055)**: Symmetric networks with flip transform
+- **Partitions (OEIS A000041)**: Resource allocation patterns
+
+See [Mathematical Extensions](./SGRAMS_MATHEMATICAL_EXTENSIONS.md) for details.
 
 ## License
 
