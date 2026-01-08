@@ -418,6 +418,39 @@ def organizational_evolution(population: List[BusinessUnit],
 
 ---
 
+## S-Grams: State Transformation Tables
+
+CoSys-Org includes an implementation of **S-Grams (2nd Power N-Grams)**, a mathematical framework for modeling state transformations through "Resolving" and "Informing" patterns. S-Grams provide the mathematical foundation for organizational state cycles and transitions.
+
+### Key Features
+
+- **Complete S-Gram Implementation (0-11)**: All 12 S-Grams with their fraction patterns
+- **State Transformation Engine**: Resolving (forward) and Informing (backward) transitions
+- **Pattern Analysis**: Tools for analyzing fraction patterns and cycle relationships
+- **CLI Tool**: Command-line interface for exploring S-Grams
+- **Comprehensive Documentation**: Full API reference and usage examples
+
+For detailed information, see:
+- [S-Grams Documentation](docs/SGRAMS_README.md)
+- [Complete S-Grams Tables](docs/SGRAMS_TABLES.md)
+- [Mathematical Extensions & N-Gram Orders](docs/SGRAMS_MATHEMATICAL_EXTENSIONS.md)
+- [Implementation](src/sgrams/)
+
+Quick example:
+```python
+from sgrams.sgram import SGramFactory
+from sgrams.state_transformer import StateTransformer
+
+# Create S-Gram 3
+sgram = SGramFactory.create_sgram(3)
+transformer = StateTransformer(sgram)
+
+# Resolve: 1 → 4 → 2 → 8 → 5 → 7 → 1 (cycle)
+next_state = transformer.resolve(1, pattern='1/7')  # Returns 4
+```
+
+---
+
 ## Implementation
 
 ### Directory Structure
@@ -426,7 +459,19 @@ cosys-org/
 ├── README.md
 ├── ARCHITECTURE.md
 ├── ORGANIZATIONAL_MAPPING.md
+├── docs/
+│   ├── SGRAMS_README.md          # S-Grams documentation
+│   └── SGRAMS_TABLES.md          # Complete reference tables
 ├── src/
+│   ├── sgrams/                   # S-Grams implementation
+│   │   ├── __init__.py
+│   │   ├── sgram.py              # Core S-Gram classes
+│   │   ├── state_transformer.py  # State transformation logic
+│   │   ├── fraction_patterns.py  # Pattern analysis
+│   │   ├── table_generator.py    # Table formatting
+│   │   ├── sgrams_cli.py         # Command-line tool
+│   │   └── examples.py           # Usage examples
+│   ├── cerebral-triad/
 │   ├── cerebral-triad/
 │   │   ├── treasury-service/         # T-7: Finance
 │   │   ├── development-service/      # PD-2: R&D
